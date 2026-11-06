@@ -1,4 +1,4 @@
-# Ajouter Cloudflare au dépôt existant — 03_UE25_Examen_Blanc_1_Cloudflare
+# Ajouter Cloudflare au dépôt existant — 06_UE25_Examen_Blanc_2_Cloudflare
 
 Ce ZIP est un complément, pas une application complète. Il réutilise public/ et netlify/functions/lib/quiz.mjs du dépôt existant. Ne remplacer aucun fichier Netlify. Ne pas envoyer le ZIP seul sur GitHub.
 
@@ -9,12 +9,12 @@ Décompresser puis ajouter le CONTENU de ce ZIP à la racine de votre dépôt ex
 - cloudflare/worker.mjs
 - cloudflare/schema.sql
 
-Il ne faut pas ajouter le dossier enveloppe 03_UE25_Examen_Blanc_1_Ajout_Cloudflare à la racine : ajouter directement ses fichiers et le dossier cloudflare. Le dépôt doit déjà contenir public/index.html, public/static/app.js et netlify/functions/lib/quiz.mjs. Si le dépôt existant possède déjà wrangler.jsonc ou un dossier cloudflare, ne pas les écraser sans comparaison : ces compléments visent les dépôts Netlify d'origine.
+Il ne faut pas ajouter le dossier enveloppe 06_UE25_Examen_Blanc_2_Ajout_Cloudflare à la racine : ajouter directement ses fichiers et le dossier cloudflare. Le dépôt doit déjà contenir public/index.html, public/static/app.js et netlify/functions/lib/quiz.mjs. Si le dépôt existant possède déjà wrangler.jsonc ou un dossier cloudflare, ne pas les écraser sans comparaison : ces compléments visent les dépôts Netlify d'origine.
 
 Avant le commit : garder les builds Netlify arrêtés si vous ne voulez pas de nouvelle publication. Si les builds sont actifs, même l'ajout de fichiers sans remplacement peut déclencher un déploiement.
 
 ## 2. Créer D1 dans Cloudflare
-Dans Storage & databases > D1, créer la base `test-examen-blanc-1-ue25-cloudflare`. Copier son UUID dans le champ database_id de wrangler.jsonc à la place de REMPLACER_PAR_ID_D1, en conservant les guillemets. Ne pas modifier binding: DB.
+Dans Storage & databases > D1, créer la base `quiz-ue25-processus-inflammatoires-infectieux-cloudflar`. Copier son UUID dans le champ database_id de wrangler.jsonc à la place de REMPLACER_PAR_ID_D1, en conservant les guillemets. Ne pas modifier binding: DB.
 Dans la console SQL D1, exécuter le contenu de cloudflare/schema.sql :
 
 ```sql
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS records (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 
 ## 3. Relier le dépôt existant à Cloudflare
 Workers & Pages > Create application > Import a repository : sélectionner ce dépôt et la branche où vous avez ajouté les fichiers.
-- Nom Worker : `test-examen-blanc-1-ue25-cloudflare`.
+- Nom Worker : `quiz-ue25-processus-inflammatoires-infectieux-cloudflar`.
 - Dossier racine : racine du dépôt (où se trouvent package.json, netlify.toml et le nouveau wrangler.jsonc).
 - Commande de compilation : vide. Ne pas reprendre npm run build de Netlify.
 - Commande de déploiement : `npx --yes --package=wrangler@4 wrangler deploy`. Cloudflare télécharge et lance Wrangler, aucun terminal local ni modification de package.json requis.

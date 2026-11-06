@@ -1,5 +1,5 @@
 {
-  "name": "test-examen-blanc-1-ue25-cloudflare",
+  "name": "quiz-ue25-processus-inflammatoires-infectieux-cloudflar",
   "main": "cloudflare/worker.mjs",
   "compatibility_date": "2026-11-06",
   "assets": {
@@ -9,15 +9,15 @@
   },
   "vars": {
     "ASSET_HASHES": {
-      "/index.html": "e902e6244e9a1eb229aa5a71c44b6544ad95b2f448c6028f776b3d93855d8b94",
+      "/index.html": "bf04ff238cd271b3b41b9bca795df9fb70deac52fe9666ddb372468297516064",
       "/static/style.css": "35f3298c8b286f6ff854d2be7cc5c97aac587e5098c1b5e0b2cd56445d224b65",
-      "/static/app.js": "9b1450d46bc7003ea7129043cbd32f37eec19360a2cb54c6c0f8ba02d62927c7"
+      "/static/app.js": "5bb862e50d51c7addab856ac1f50748f5f010ac131eb9eca5f307d7f76babcc8"
     }
   },
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "test-examen-blanc-1-ue25-cloudflare",
+      "database_name": "quiz-ue25-processus-inflammatoires-infectieux-cloudflar",
       "database_id": "REMPLACER_PAR_ID_D1"
     }
   ]
